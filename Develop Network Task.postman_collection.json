@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "7dd3638e-43fa-4b4e-b0e2-0492ee6c4f60",
+		"name": "Develop Network Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27666109",
+		"_collection_link": "https://blue-zodiac-935430.postman.co/workspace/My-Workspace~c4a000c5-2667-4d72-8e83-f88e3c3490ea/collection/27666109-7dd3638e-43fa-4b4e-b0e2-0492ee6c4f60?action=share&source=collection_link&creator=27666109"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/register?name=hassan hassan&phone_number=+201154634690&password=12345678&password_confirmation=12345678",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"register"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "hassan hassan"
+								},
+								{
+									"key": "phone_number",
+									"value": "+201154634690"
+								},
+								{
+									"key": "password",
+									"value": "12345678"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/login?phone_number=+201154634688&password=12345678&remember=true",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "phone_number",
+									"value": "+201154634688"
+								},
+								{
+									"key": "password",
+									"value": "12345678"
+								},
+								{
+									"key": "remember",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/verify?phone_number=+201154634688&verification_code=922821",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "phone_number",
+									"value": "+201154634688"
+								},
+								{
+									"key": "verification_code",
+									"value": "922821"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "all-tags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/tags",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-single-tage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|UzLQTRXKk0NoVazm8tapsbaghU4Q0nsAhEiXQQ2b6f97e5d2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/tags/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|UzLQTRXKk0NoVazm8tapsbaghU4Q0nsAhEiXQQ2b6f97e5d2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{localhost}}/api/tags/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "tag2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/tags",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|y5H9FkMnOpWUxKhVefug6uQjh1tRECjUDZ62ZfNKbd1605b2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "tag2",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/tags/2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tags",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "all-posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/posts",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-single-post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{localhost}}/api/posts/3",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch-all-soft-deleted",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{localhost}}/api/posts/soft-deleted-posts",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"soft-deleted-posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restore-post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/posts/restore-post/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"restore-post",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/posts/2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "post5",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "content",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "VEDK1Ewau/car-1-800x668 - Copy.jpg"
+								},
+								{
+									"key": "pinned",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tag_ids[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tag_ids[]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/posts",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|lhlXh5EbDUwytSl8WyKl5Tto3axIFvUMGCaoS9USa36fe943",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "post2.1",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "content",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "VEDK1Ewau/car-1-800x668 - Copy.jpg"
+								},
+								{
+									"key": "pinned",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tag_ids[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tag_ids[]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/posts/2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Global",
+			"item": [
+				{
+					"name": "stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/stats",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
